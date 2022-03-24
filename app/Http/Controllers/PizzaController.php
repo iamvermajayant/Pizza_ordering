@@ -16,7 +16,8 @@ class PizzaController extends Controller
      */
     public function index()
     {
-        return view("pizza.index");
+        $pizzas = Pizza::get();
+        return view("pizza.index" , compact('pizzas'));
     }
 
     /**
@@ -47,7 +48,7 @@ class PizzaController extends Controller
            'category' => $request->category,
            'image' => $path,
        ]);
-       return redirect()->route('pizza.index');
+       return redirect()->route('pizza.index')->with('message', 'Pizza added successfully');
     }
 
     /**
