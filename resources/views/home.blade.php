@@ -15,6 +15,10 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+
+                    <a href="{{route('pizza.create')}}" 
+                    <button class="btn btn-primary">Move</button>
+                    </a>
                 </div>
             </div>
         </div>
